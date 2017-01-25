@@ -14,11 +14,15 @@ public class Output extends Filter {
         si = new ArrayList<String>();
     }
 
-    public void run() {
+    public String run() {
         s = readBuffer();
         si = readIgnore();
+        ///*
+        String result = "";
         for (int i = 0; i < s.size(); i++) {
-            System.out.println(s.get(i));
+            result += s.get(i) + "\n";
         }
+        //*/
+        return result;
     }
 }

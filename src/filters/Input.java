@@ -1,5 +1,7 @@
 package filters;
 
+import ui.Controller;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,7 +16,8 @@ public class Input extends Filter{
         sc = new Scanner(System.in);
     }
 
-    public void run() {
+    public void run(ArrayList<String> titles, ArrayList<String> ignore) {
+        /*
         // Read in n number of lines
         int numLines = 0;
         numLines = sc.nextInt();
@@ -33,9 +36,10 @@ public class Input extends Filter{
         for (int i = 0; i < numIgnore; i++) {
             si.add(sc.nextLine());
         }
+        //*/
 
         // Write the data to the pipe
-        writeBuffer(s);
-        writeIgnore(si);
+        writeBuffer(titles);
+        writeIgnore(ignore);
     }
 }
