@@ -1,0 +1,10 @@
+# Ignore everything
+*
+# Add only src folder
+!.gitignore
+!src
+!src/*
+!src/filters
+!src/filters/*
+!src/ui
+!src/ui/*
