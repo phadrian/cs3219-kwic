@@ -41,35 +41,11 @@ public class Controller {
         //     An ArrayList of ignore words, each
         //     stored as a string
 
-        // Initialization of filters
-        Input input = new Input();
-        CircularShift cs = new CircularShift();
-        Sort sort = new Sort();
-        Output output = new Output();
-
-        // Setting up pipes between filters
-        Pipe inputToCs = new Pipe();
-        Pipe csToSort = new Pipe();
-        Pipe sortToOutput = new Pipe();
-
-        input.setOut(inputToCs);
-        cs.setIn(inputToCs);
-
-        cs.setOut(csToSort);
-        sort.setIn(csToSort);
-
-        sort.setOut(sortToOutput);
-        output.setIn(sortToOutput);
-
-        // Run the filters
-        input.run(inputText, ignoreText);
-        cs.run();
-        sort.run();
-        String result = output.run();
+        Pipeline pl = new Pipeline();
 
         // ============================================
 
         // Displays the output string
-        outputTextArea.setText(result);
+        outputTextArea.setText(pl.run(inputText, ignoreText));
     }
 }
