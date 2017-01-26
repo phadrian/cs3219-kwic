@@ -17,12 +17,13 @@ public class Output extends Filter {
     public String run() {
         s = readBuffer();
         si = readIgnore();
-        ///*
+
+        // Concatenate the strings with newlines for display
         String result = "";
         for (int i = 0; i < s.size(); i++) {
             result += s.get(i) + "\n";
         }
-        //*/
+
         return result;
     }
 }

@@ -25,11 +25,21 @@ public class Controller {
     }
 
     @FXML
-    private void handleRunButton(ActionEvent event) {
+    private void runWorkflow(ActionEvent event) {
 
         // Get the text from TextArea into an ArrayList of strings
         ArrayList<String> inputText = new ArrayList<String>(Arrays.asList(inputTextArea.getText().split("\n")));
         ArrayList<String> ignoreText = new ArrayList<String>(Arrays.asList(ignoreTextArea.getText().split("\n")));
+
+        // =============INSERT CODE HERE==============
+
+        // inputText: ArrayList<String>
+        //     An ArrayList of titles, each stored as
+        //     an individual string
+
+        // ignoreText: ArrayList<String>
+        //     An ArrayList of ignore words, each
+        //     stored as a string
 
         // Initialization of filters
         Input input = new Input();
@@ -52,13 +62,14 @@ public class Controller {
         output.setIn(sortToOutput);
 
         // Run the filters
-        ///*
         input.run(inputText, ignoreText);
         cs.run();
         sort.run();
         String result = output.run();
-        //*/
 
+        // ============================================
+
+        // Displays the output string
         outputTextArea.setText(result);
     }
 }

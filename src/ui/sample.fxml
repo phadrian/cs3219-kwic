@@ -56,7 +56,7 @@
                 </VBox>
                 <VBox style="-fx-padding:10 10 0 10">
                     <children>
-                        <Button fx:id="processButton" text="Run" prefWidth="100" onAction="#handleRunButton"/>
+                        <Button fx:id="processButton" text="Run" prefWidth="100" onAction="#runWorkflow"/>
                     </children>
                 </VBox>
             </children>
